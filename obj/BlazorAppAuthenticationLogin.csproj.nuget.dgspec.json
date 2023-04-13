@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\nicola.hu\\Desktop\\dotNet\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\nicola.hu\\Desktop\\dotNet\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nicola.hu\\Desktop\\dotNet\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin.csproj",
+        "projectName": "BlazorAppAuthenticationLogin",
+        "projectPath": "C:\\Users\\nicola.hu\\Desktop\\dotNet\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin.csproj",
+        "packagesPath": "C:\\Users\\nicola.hu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicola.hu\\Desktop\\dotNet\\BlazorAppAuthenticationLogin\\BlazorAppAuthenticationLogin\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicola.hu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

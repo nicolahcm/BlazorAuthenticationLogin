@@ -1,0 +1,59 @@
+﻿@page "/login"
+@using BlazorAppAuthenticationLogin.Models;
+@using Blazored.LocalStorage;
+
+@inject HttpClient Http
+@inject AuthenticationStateProvider AuthStateProvider
+@inject ILocalStorageService LocalStorage
+@inject NavigationManager NavManager
+
+
+<h3>Login</h3>
+
+<EditForm Model="user" OnSubmit="HandleLogin">
+    <label for="username">Name</label>
+    <InputText id="username" @bind-Value="user.Username"></InputText>
+
+    <label for="password">Password</label>
+    <InputText id="password" @bind-Value="user.Password" type="password"></InputText>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@if(wrongCredentials)
+{
+    <h4>Wrong Credentials!</h4>
+}
+
+@code {
+        Boolean wrongCredentials = false;
+        UserLoginDto user = new UserLoginDto();
+
+        async Task HandleLogin()
+        {
+            // Index:
+            // 1. Retrieve Token by calling the endpoint for auth (login)
+            // 2. Save the token in the local Storage 
+            // 3. Call AuthStateProvider (our custom class) ... And there check the local storage. If there is information in local storage, then we are logged
+            //          OtherWise Not
+
+            // 1.
+        var result = await Http.PostAsJsonAsync("https://localhost:7242/api/auth", user);
+            var token = await result.Content.ReadAsStringAsync();
+            if (token.Equals("ERROR"))
+            {
+                wrongCredentials = true;
+            }
+            else
+            {
+                // 2.
+                await LocalStorage.SetItemAsync("token", token);
+
+                // 3.
+                await AuthStateProvider.GetAuthenticationStateAsync();
+
+                // 4. Da Reindirizzare Da Qualche Parte SE tutto era a posto.
+                NavManager.NavigateTo("/");
+            }
+        }
+}
